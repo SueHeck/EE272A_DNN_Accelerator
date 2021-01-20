@@ -23,6 +23,7 @@ void conv_gold_tiled(
   // will use this function to verify the output of your accelerator.
  
   // Your code starts here
+OY1: for(intoy1 = 0; oy1 < OY1; oy1++) { OX1: for(intox1 = 0; ox1 < OX1; ox1++) { OC1: for(intoc1 = 0; oc1 < OC1; oc1++) { IC1: for(intic1 = 0; ic1 < IC1; ic1++) { FY: for(intfy= 0; fy< FY; fy++) { FX: for(intfx= 0; fx< FX; fx++) { OY0: for(intoy0 = 0; oy0 < OY0; oy0++) { OX0: for(intox0 = 0; ox0 < OX0; ox0++) { OC0: for(intoc0 = 0; oc0 < OC0; oc0++) { // unrolled in hwintoy = oy1*OY0 + oy0; intox = ox1*OX0 + ox0; intoc= oc1*OC0 + oc0; IC0: for(intic0 = 0; ic0 < IC0; ic0++) { // unrolled in hwintic= ic1*IC0 + ic0; ofmap[oy][ox][oc] += (int32_t)   ifmap[STRIDE*oy+fy][STRIDE*ox+fx][ic] * (int32_t) weights[fy][fx][ic][oc]; } } } } } } } } } } 
 
   // Your code ends here
 }
